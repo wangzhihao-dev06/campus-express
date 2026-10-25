@@ -200,13 +200,6 @@ stateDiagram-v2
 | ![小程序首页](screenshots/10-miniprogram.png) | ![骑手工作台](screenshots/11-miniprogram-rider.png) |
 | 原生小程序，tabBar 四页 | 上线接单、抢单、送达独立工作台 |
 
-**微信小程序**
-
-| 学生端首页 | 骑手工作台 |
-|:---:|:---:|
-| ![小程序首页](screenshots/10-miniprogram.png) | ![骑手工作台](screenshots/11-miniprogram-rider.png) |
-| 原生小程序，tabBar 四页 | 上线接单、抢单、送达独立工作台 |
-
 ## 小程序端
 
 原生微信小程序（非 uni-app 编译产物），7 个页面，微信开发者工具直接打开即可运行：
