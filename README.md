@@ -15,19 +15,7 @@
 
 ## 系统架构
 
-```mermaid
-flowchart TB
-    H5["H5 页面（学生 / 骑手 / 驿站管理）"]
-    MP["微信小程序（原生 · 7 个页面）"]
-    INT["JWT 拦截器层"]
-    CTRL["Controller"]
-    SVC["Service（事务 · 状态流转）"]
-    MAP["Mapper（MyBatis 动态 SQL）"]
-    DB[("MySQL campus_express · 10 张表")]
-    H5 --> INT
-    MP --> INT
-    INT --> CTRL --> SVC --> MAP --> DB
-```
+![系统架构](docs/diagrams/architecture.png)
 
 ## 功能
 
@@ -61,16 +49,7 @@ flowchart TB
 
 三个角色的 token 头名、密钥、claims 各不相同，但登录入口只有一个：
 
-```mermaid
-flowchart LR
-    A["POST /auth/login"] --> B{"按顺序匹配身份"}
-    B -->|管理员用户名| C["ADMIN token"]
-    B -->|学生手机号| D["USER authentication"]
-    B -->|骑手手机号| E["RIDER rider-token"]
-    C --> F["返回 role + token + redirect"]
-    D --> F
-    E --> F
-```
+![三身份统一鉴权](docs/diagrams/auth-flow.png)
 
 - 匹配优先级为「管理员用户名 → 学生手机号 → 骑手手机号」，**命中身份后密码错误直接抛错，不再继续尝试**，避免用错误密码撞到其他身份
 - 抽象 `AbstractJwtInterceptor` 模板方法，派生出三套拦截器子类，只覆写取 header 名、取密钥、取 claims 三个钩子
@@ -90,24 +69,7 @@ flowchart LR
 
 ### 3. 订单状态机
 
-```mermaid
-stateDiagram-v2
-    S0: 待接单
-    S1: 已接单
-    S2: 已取件
-    S3: 已送达
-    S4: 已完成
-    S5: 已取消
-    [*] --> S0: 学生下单（扣余额）
-    S0 --> S1: 骑手抢单（乐观锁）
-    S0 --> S5: 学生取消（原路退余额）
-    S1 --> S2: 骑手取件
-    S2 --> S3: 骑手送达
-    S3 --> S4: 学生确认收货（结算骑手收益）
-    S4 --> S4: 评价（调整信誉分）
-    S4 --> [*]
-    S5 --> [*]
-```
+![订单状态机](docs/diagrams/order-state.png)
 
 所有状态值收敛在 `StatusConstant` 单一来源：
 
