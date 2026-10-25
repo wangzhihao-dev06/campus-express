@@ -162,18 +162,50 @@ stateDiagram-v2
 
 ## 界面预览
 
-> 截图位于 `screenshots/` 目录
+**学生端**
 
-| 页面 | 说明 |
-|---|---|
-| `01-student-parcel.png` | 学生端 · 我的包裹（含取件码与货架位） |
-| `02-student-order.png` | 学生端 · 代取订单列表（进行中 / 已完成） |
-| `03-student-address.png` | 学生端 · 收货地址管理 |
-| `04-rider-hall.png` | 骑手端 · 抢单大厅 |
-| `05-rider-stat.png` | 骑手端 · 收益统计 |
-| `06-admin-dashboard.png` | 管理端 · 数据看板（6 张图表） |
-| `07-admin-inbound.png` | 管理端 · 包裹入库（生成取件码） |
-| `08-miniprogram.png` | 微信小程序 · 学生端首页 |
+| 我的包裹 | 代取订单 |
+|:---:|:---:|
+| ![我的包裹](screenshots/01-student-parcel.png) | ![代取订单](screenshots/02-student-order.png) |
+| 包裹列表，已到站的显示取件码与货架位 | 订单列表，区分进行中与已完成 |
+
+| 收货地址 | 下单申请 |
+|:---:|:---:|
+| ![收货地址](screenshots/03-student-address.png) | ![下单申请](screenshots/04-student-submit.png) |
+| 地址增删改查与默认地址 | 选择地址、填写小费与备注，按体积计费 |
+
+**骑手端**
+
+| 抢单大厅 | 收益统计 |
+|:---:|:---:|
+| ![抢单大厅](screenshots/05-rider-hall.png) | ![收益统计](screenshots/06-rider-stat.png) |
+| 本驿站待接单列表，接单走乐观锁 | 今日收益、累计收益、待完成单数 |
+
+**驿站管理端**
+
+| 数据看板 |
+|:---:|
+| ![数据看板](screenshots/07-admin-dashboard.png) |
+| 7 天订单趋势、成交额趋势、订单/包裹状态分布、快递公司 TOP5、骑手排行，单接口聚合 |
+
+| 包裹入库 | 订单管理 |
+|:---:|:---:|
+| ![包裹入库](screenshots/08-admin-inbound.png) | ![订单管理](screenshots/09-admin-order.png) |
+| 入库自动生成 6 位取件码并分配货架 | 分页查询与订单详情 |
+
+**微信小程序**
+
+| 学生端首页 | 骑手工作台 |
+|:---:|:---:|
+| ![小程序首页](screenshots/10-miniprogram.png) | ![骑手工作台](screenshots/11-miniprogram-rider.png) |
+| 原生小程序，tabBar 四页 | 上线接单、抢单、送达独立工作台 |
+
+**微信小程序**
+
+| 学生端首页 | 骑手工作台 |
+|:---:|:---:|
+| ![小程序首页](screenshots/10-miniprogram.png) | ![骑手工作台](screenshots/11-miniprogram-rider.png) |
+| 原生小程序，tabBar 四页 | 上线接单、抢单、送达独立工作台 |
 
 ## 小程序端
 
