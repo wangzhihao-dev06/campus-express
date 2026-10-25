@@ -17,17 +17,13 @@
 
 ```mermaid
 flowchart TB
-    subgraph client["客户端"]
-        H5["H5 页面<br/>学生 / 骑手 / 驿站管理"]
-        MP["微信小程序<br/>原生 · 7 个页面"]
-    end
-    subgraph backend["Spring Boot 后端 :8081"]
-        INT["JWT 拦截器层<br/>authentication / rider-token / token"]
-        CTRL["Controller<br/>user · rider · admin · common"]
-        SVC["Service<br/>业务编排 · 事务 · 状态流转"]
-        MAP["Mapper<br/>MyBatis 动态 SQL"]
-    end
-    DB[("MySQL campus_express<br/>10 张表")]
+    H5["H5 页面（学生 / 骑手 / 驿站管理）"]
+    MP["微信小程序（原生 · 7 个页面）"]
+    INT["JWT 拦截器层"]
+    CTRL["Controller"]
+    SVC["Service（事务 · 状态流转）"]
+    MAP["Mapper（MyBatis 动态 SQL）"]
+    DB[("MySQL campus_express · 10 张表")]
     H5 --> INT
     MP --> INT
     INT --> CTRL --> SVC --> MAP --> DB
@@ -67,10 +63,10 @@ flowchart TB
 
 ```mermaid
 flowchart LR
-    A["POST /auth/login<br/>account + password"] --> B{"按顺序匹配身份"}
-    B -->|"管理员用户名"| C["ADMIN<br/>token 头"]
-    B -->|"学生手机号"| D["USER<br/>authentication 头"]
-    B -->|"骑手手机号"| E["RIDER<br/>rider-token 头"]
+    A["POST /auth/login"] --> B{"按顺序匹配身份"}
+    B -->|管理员用户名| C["ADMIN token"]
+    B -->|学生手机号| D["USER authentication"]
+    B -->|骑手手机号| E["RIDER rider-token"]
     C --> F["返回 role + token + redirect"]
     D --> F
     E --> F
@@ -96,15 +92,21 @@ flowchart LR
 
 ```mermaid
 stateDiagram-v2
-    [*] --> 待接单: 学生下单（扣余额）
-    待接单 --> 已接单: 骑手抢单（乐观锁）
-    待接单 --> 已取消: 学生取消（原路退余额）
-    已接单 --> 已取件: 骑手取件
-    已取件 --> 已送达: 骑手送达
-    已送达 --> 已完成: 学生确认收货（结算骑手收益）
-    已完成 --> 已完成: 评价（调整信誉分）
-    已完成 --> [*]
-    已取消 --> [*]
+    S0: 待接单
+    S1: 已接单
+    S2: 已取件
+    S3: 已送达
+    S4: 已完成
+    S5: 已取消
+    [*] --> S0: 学生下单（扣余额）
+    S0 --> S1: 骑手抢单（乐观锁）
+    S0 --> S5: 学生取消（原路退余额）
+    S1 --> S2: 骑手取件
+    S2 --> S3: 骑手送达
+    S3 --> S4: 学生确认收货（结算骑手收益）
+    S4 --> S4: 评价（调整信誉分）
+    S4 --> [*]
+    S5 --> [*]
 ```
 
 所有状态值收敛在 `StatusConstant` 单一来源：
