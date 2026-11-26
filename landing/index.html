@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#faf8ff">
+<meta name="description" content="青年驿站，让校园包裹的查询、代取、配送与入库更清楚。">
+<title>青年驿站 · 校园快递服务</title>
+<link rel="icon" href="data:,">
+<style>
+:root{--ink:#23163d;--muted:#625775;--purple:#5732ae;--paper:#faf8ff;--line:#e9e1f4;--lime:#e7fbaf;--wide:1720px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 'Microsoft YaHei UI','PingFang SC',system-ui,sans-serif}a{color:inherit}a:focus-visible{outline:3px solid #7044cf;outline-offset:5px}.wrap{width:min(var(--wide),calc(100% - 64px));margin:auto}.top{padding:21px 0;border-bottom:1px solid var(--line)}.top .wrap,.foot .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:inline-flex;align-items:center;gap:11px;font-size:20px;font-weight:800;text-decoration:none}.mark{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--purple);color:white}.mark svg,.admin-entry svg{width:21px;height:21px}.top-note,.foot{font-size:13px;color:var(--muted)}.hero{display:grid;grid-template-columns:1fr 1.06fr;gap:52px;align-items:center;padding-block:62px 56px}.kicker{font-size:13px;font-weight:800;letter-spacing:.13em;color:var(--purple);margin:0 0 14px}.kicker::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:#7b52c6;margin-right:9px}h1,h2,h3,p{margin:0}h1{font-size:clamp(40px,6vw,79px);line-height:1.12;letter-spacing:-.07em;font-weight:900}h1 span{display:block;color:var(--purple)}.lead{margin-top:22px;color:var(--muted);max-width:32em}.explore{display:inline-flex;gap:12px;align-items:center;margin-top:24px;border-radius:999px;padding:10px 18px;border:1px solid #cbb9ea;font-size:14px;font-weight:800;text-decoration:none}.explore:hover{background:#efe7ff}.art{margin:0;background:#e9ddff;border:1px solid #ded0f6;border-radius:28px;overflow:hidden}.art svg{display:block;width:100%;height:auto}.services{padding:12px 0 47px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin-bottom:17px}.section-head h2{font-size:clamp(24px,4vw,34px);line-height:1.25}.section-head p{color:var(--muted);font-size:14px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{padding:20px 23px;border-radius:18px;background:#fff;border:1px solid var(--line)}.badge{display:inline-block;background:#eee6ff;color:#5732ae;font-size:12px;font-weight:800;padding:3px 10px;border-radius:999px}.card:nth-child(2) .badge{background:#e8f2d4;color:#3d5620}.card:nth-child(3) .badge{background:#ffeedc;color:#704425}.card h3{margin:10px 0 4px;font-size:19px}.card p{font-size:14px;color:var(--muted)}.foot{border-top:1px solid var(--line);padding:15px 0 97px}.admin-entry{position:fixed;z-index:2;right:max(22px,env(safe-area-inset-right));bottom:max(22px,env(safe-area-inset-bottom));display:inline-flex;align-items:center;gap:9px;min-height:48px;padding:10px 17px;border:1px solid #4b2a97;border-radius:999px;background:#34235e;color:white;box-shadow:0 8px 22px #2f1f5b38;text-decoration:none;font-size:14px;font-weight:800}.admin-entry:hover{background:#5732ae}.admin-entry .arrow{margin-left:4px;color:var(--lime)}
+@media(max-width:820px){.hero{gap:24px;padding-block:39px}.wrap{width:calc(100% - 40px)}.card{padding:16px}}@media(max-width:650px){.top{padding:13px 0}.top-note{display:none}.hero{grid-template-columns:1fr;gap:24px;padding-block:36px 25px}.lead{margin-top:15px}.explore{margin-top:17px}.art{border-radius:20px}.grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:5px}.services{padding-bottom:30px}.admin-entry{right:max(13px,env(safe-area-inset-right));bottom:max(13px,env(safe-area-inset-bottom))}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.metrics{margin:0 0 34px;padding:22px clamp(18px,3.5vw,48px);border:1px solid #ded0f6;background:#eee5ff;border-radius:22px}.metrics-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:5px 12px}.metrics h2{font-size:19px}.metrics small{color:var(--muted)}.metric-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:13px 0 0}.metric{min-width:0}.metric dt{color:var(--muted);font-size:13px}.metric dd{margin:1px 0 0;font-weight:900;color:var(--purple);font-size:clamp(25px,3.2vw,45px);line-height:1.13}.metric dd span{font-size:.38em;margin-left:4px;white-space:nowrap}.metric dd small{font-size:.55em;margin:0 .28em;color:var(--purple)}
+.card{display:grid;grid-template-rows:1fr auto;transition:box-shadow .2s,border-color .2s}.card:hover,.card:focus-within{border-color:#bda3ed;box-shadow:0 10px 26px #51349b19}.role-action{display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;margin-top:15px;padding:9px 13px;border-radius:10px;background:#ebe0ff;color:#4b269c;text-decoration:none;font-size:14px;font-weight:800}.role-action:hover{background:#ded0fa}.role-action::after{content:'↗'鈫?}.role-action small{font-size:11px;color:#5b4b77;grid-column:1;grid-row:2}.role-action:has(small){row-gap:0}
+@media(hover:hover) and (pointer:fine){.role-action{opacity:0;transform:translateY(5px);pointer-events:none;transition:opacity .18s,transform .18s}.card:hover .role-action,.card:focus-within .role-action{opacity:1;transform:none;pointer-events:auto}}
+@media(min-width:1200px){.wrap{width:min(var(--wide),calc(100% - clamp(76px,9vw,192px)))}.hero{padding-block:clamp(45px,6vh,95px);gap:clamp(44px,6vw,105px)}.art svg{max-height:clamp(365px,51vh,600px)}}
+@media(max-width:650px){.metrics{margin-bottom:24px}.metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.metric:last-child{grid-column:1/-1}.metric dd{font-size:27px}}
+@media(prefers-reduced-motion:reduce){.card,.role-action{transition:none}}
+.demo-note{display:block;margin-top:5px;font-size:.8rem;color:var(--muted)}
+</style>
+</head>
+<body id="top">
+<header class="top"><div class="wrap"><a class="brand" href="#top"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="m3 7 9-4 9 4v10l-9 4-9-4zM3 7l9 4 9-4m-9 4v10M7.5 5l9 4v4"/></svg></span>青年驿站</a><span class="top-note">校园快递查询 · 代取配送 · 驿站管理</span></div></header>
+<main class="wrap">
+<section class="hero" aria-labelledby="hero-title">
+<div><p class="kicker">校园快递服务</p><h1 id="hero-title">校园快递，<span>取件更轻松</span></h1><p class="lead">在手机上查包裹、下单代取。骑手接单后的配送进度随时可查，驿站也能集中管理入库包裹。</p><a class="explore" href="#services">下载应用 <span aria-hidden="true">↓</span></a></div>
+<figure class="art"><svg viewBox="0 0 600 440" role="img" aria-labelledby="art-title"><title id="art-title">校园驿站门口摆着待取的包裹</title>
+<defs><pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.5" fill="#b69bdc" opacity=".43"/></pattern><linearGradient id="wall" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#fffbff"/><stop offset="1" stop-color="#e9dafe"/></linearGradient></defs>
+<path fill="url(#dots)" d="M0 0h600v440H0z"/><circle cx="306" cy="218" r="158" fill="#d9c4fa"/><circle cx="456" cy="90" r="38" fill="#e7fbaf"/><path d="M49 350c50-31 141-54 261-49 93 4 168 19 244 50" fill="none" stroke="#af8de2" stroke-dasharray="4 7" stroke-width="2"/><ellipse cx="300" cy="366" rx="234" ry="38" fill="#cbb2ee"/>
+<g stroke="#62449a" stroke-width="3" stroke-linejoin="round"><path d="M148 164h289v180H148z" fill="url(#wall)"/><path d="m437 164 35 19v143l-35 18z" fill="#be9ce9"/><path d="M131 159h319l-28-44H163z" fill="#6d47b4"/><path d="m450 159 38 22-34-48-32-18z" fill="#4b2b8c"/><path d="M130 159h321l-4 34H135z" fill="#825ac5"/><path d="M160 208h116v77H160z" fill="#bda4ed"/><path d="M218 209v76m-58-37h116" fill="none"/><path d="M302 216h106v128H302z" fill="#6345a0"/><path d="M317 231h76v113h-76z" fill="#a68ada"/><path d="M355 232v112m-7-62h-6m20 0h6" stroke="#503581"/><path d="M145 344h296v13H145z" fill="#fff6ff"/></g>
+<text x="287" y="181" fill="white" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" letter-spacing="3">青年驿站</text>
+<g stroke="#795139" stroke-width="2.4" stroke-linejoin="round"><path d="m76 304 53-22 63 18-54 24z" fill="#ffdf9d"/><path d="m76 304 62 20v52l-62-21z" fill="#f1ba76"/><path d="m138 324 54-24v51l-54 25z" fill="#dca161"/><path d="m105 292 63 19-11 5-64-19z" fill="#fff0c8"/><path d="m428 292 43-19 63 19-46 21z" fill="#ffe3a7"/><path d="m428 292 60 21v52l-60-22z" fill="#f1bd7e"/><path d="m488 313 46-21v50l-46 23z" fill="#dca161"/><path d="m450 282 62 20-11 5-62-20z" fill="#fff0c8"/></g><path d="M515 130h22m-11-11v22M86 215h17m-8.5-8.5v17" stroke="#7247b8" stroke-width="3" stroke-linecap="round"/><circle cx="83" cy="154" r="5" fill="#a370d2"/><circle cx="529" cy="247" r="5" fill="#a370d2"/>
+</svg></figure>
+</section>
+<section class="metrics" aria-labelledby="metrics-title">
+<div class="metrics-head"><h2 id="metrics-title">青年驿站使用情况</h2><small>云端测试库 · <span id="stat-state">等待统计</span> <time id="stat-time" hidden></time></small></div>
+<dl class="metric-grid"><div class="metric"><dt>已注册学生</dt><dd><b id="stat-students">—</b><span>人</span></dd></div><div class="metric"><dt>已送达包裹</dt><dd><b id="stat-delivered">—</b><span>件</span></dd><small class="demo-note">含 <b id="stat-demo">—</b> 件演示数据</small></div><div class="metric"><dt>已加入的骑手与驿站</dt><dd><b id="stat-riders">—</b><span>位骑手</span><small>＋</small><b id="stat-stations">—</b><span>个驿站</span></dd></div></dl>
+</section>
+<section class="services" id="services" aria-labelledby="services-title"><div class="section-head"><h2 id="services-title">从入库到送达</h2><p>学生与骑手使用 Android 应用，驿站使用网页版</p></div><div class="grid">
+<article class="card role-card"><div class="card-copy"><span class="badge">学生</span><h3>查包裹，预约代取</h3><p>查询本人手机号下的包裹，没空去驿站时可发起代取订单，查看配送进度。</p></div><a class="role-action" data-android-download href="youth-station-android-1.2.6-student-rider-test.apk" aria-label="下载学生端 Android 测试版" download>下载应用<small>Android 测试版 <span data-release-version>1.2.6</span> · 登录时选择学生</small></a></article>
+<article class="card role-card"><div class="card-copy"><span class="badge">骑手</span><h3>接单、取件、确认送达</h3><p>按订单信息到驿站取件，更新配送状态，到达后确认送达。</p></div><a class="role-action" data-android-download href="youth-station-android-1.2.6-student-rider-test.apk" aria-label="下载骑手端 Android 测试版" download>下载应用<small>Android 测试版 <span data-release-version>1.2.6</span> · 登录时选择骑手</small></a></article>
+<article class="card role-card"><div class="card-copy"><span class="badge">驿站管理</span><h3>入库登记，管理在库包裹</h3><p>登记到站快递，查看待入库和在库包裹，让取件和交接更清楚。</p></div><a class="role-action" href="https://admin.qiqifjj.online/admin.html">进入管理端<small>网页版 · 无需下载</small></a></article>
+</div></section>
+</main>
+<footer class="foot"><div class="wrap"><span>青年驿站</span><span>校园快递代取与驿站管理系统</span></div></footer>
+<a class="admin-entry" href="https://admin.qiqifjj.online/admin.html"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 4v2"/></svg>管理端登录<span class="arrow" aria-hidden="true">↗</span></a>
+<script>
+(async () => {
+  try {
+    const response = await fetch(new URL('./android-release.json', location.href), {
+      cache: 'no-store', mode: 'same-origin', redirect: 'error', signal: AbortSignal.timeout(4000)
+    });
+    if (!response.ok) return;
+    const {version, apk} = await response.json();
+    if (typeof version !== 'string' || !/^\d{1,6}\.\d{1,6}\.\d{1,6}$/.test(version)) return;
+    if (typeof apk !== 'string' || !/^[a-zA-Z0-9][a-zA-Z0-9_-]*(?:\.[a-zA-Z0-9_-]+)*\.apk$/.test(apk) || apk.length > 160) return;
+    const address = new URL(apk, location.href);
+    document.querySelectorAll('[data-android-download]').forEach(link => { link.href = address.href; });
+    document.querySelectorAll('[data-release-version]').forEach(label => { label.textContent = version; });
+  } catch {
+    // Keep the fallback APK when the manifest is unavailable.
+  }
+})();
+</script>
+<script>
+(() => {
+  const keys = ['students', 'delivered', 'demo', 'riders', 'stations'];
+  const field = key => document.getElementById(`stat-${key}`);
+  const numbers = new Intl.NumberFormat('zh-CN');
+  const time = field('time');
+  let latest = Date.parse(time.dateTime) || 0;
+  let running = false;
+  async function refresh() {
+    if (running) return;
+    running = true;
+    const request = new AbortController();
+    const timeout = setTimeout(() => request.abort(), 5000);
+    try {
+      const response = await fetch('./public-stats.json', {cache: 'no-store', signal: request.signal, redirect: 'error'});
+      if (!response.ok) throw Error('Stats unavailable');
+      const data = await response.json();
+      const stamp = typeof data.asOf === 'string' ? Date.parse(data.asOf) : NaN;
+      if (!Number.isFinite(stamp) || stamp < latest || !keys.every(key => Number.isSafeInteger(data[key]) && data[key] >= 0) || data.demo > data.delivered) throw Error('Invalid stats');
+      for (const key of keys) field(key).textContent = numbers.format(data[key]);
+      latest = stamp;
+      time.hidden = false;
+      time.dateTime = data.asOf;
+      time.textContent = new Intl.DateTimeFormat('sv-SE', {timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23'}).format(stamp);
+      field('state').textContent = Date.now() - stamp > 120000 ? '统计快照' : '自动刷新';
+    } catch {
+      field('state').textContent = latest ? '暂未更新，显示上次统计' : '统计暂不可用';
+    } finally {
+      clearTimeout(timeout);
+      running = false;
+    }
+  }
+  refresh();
+  setInterval(refresh, 60000);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) refresh(); });
+})();
+</script>
+</body>
+</html>

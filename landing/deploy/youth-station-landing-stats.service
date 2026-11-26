@@ -1,0 +1,22 @@
+[Unit]
+Description=Build the Youth Station public statistics JSON
+After=mysql.service mysqld.service
+
+[Service]
+Type=oneshot
+Environment=YOUTH_STATS_OUTPUT=/usr/share/nginx/html/youth-station/public-stats.json
+Environment=YOUTH_MYSQL_DEFAULTS=/etc/youth-landing/mysql-readonly.cnf
+Environment=YOUTH_STATS_DATABASE=youth_station_cloud_test
+ExecStart=/usr/bin/python3 /opt/youth-landing-stats/refresh-public-stats.py
+TimeoutStartSec=22s
+UMask=0077
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/usr/share/nginx/html/youth-station
+RestrictAddressFamilies=AF_UNIX
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
